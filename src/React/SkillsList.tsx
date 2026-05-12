@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const CategoryIcons = {
-  "Web Development": (
+const CategoryIcons: Record<string, React.ReactNode> = {
+  "Frontend Development": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -11,7 +11,7 @@ const CategoryIcons = {
       <path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path>
     </svg>
   ),
-  "Mobile Development": (
+  "Backend Development": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -36,20 +36,17 @@ const CategoryIcons = {
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
-  const skills = {
-    "Web Development": [
-      "Single Page Applications (SPAs)",
-      "Landing pages and business websites",
-      "Portfolio websites",
+  const skills: Record<string, string[]> = {
+    "Frontend Development": [
+      "  Creación de interfaces de usuario dinámicas y responsivas utilizando tecnologias modernas."
     ],
-    "Mobile Development": [
-      "Mobile-friendly web apps",
-      "React Native mobile apps",
+    "Backend Development": [
+      "Especializada en backend robustos y escalables, aplicando buenas prácticas de arquitectura y seguridad. Garantizando soluciones eficientes, mantenibles y perfectamente integradas con el frontend, optimizando el rendimiento y la estabilidad del sistema.",
     ],
     "UI/UX Design & Prototyping": [
-      "UI design with Figma & Canva",
-      "UX research & improvements",
-      "Prototyping for websites & mobile apps",
+      "UI design en Figma & Canva",
+      "UX research",
+      "Prototipos para sitios y app movil",
     ],
   };
 
@@ -60,7 +57,7 @@ const SkillsList = () => {
   return (
     <div className="text-left pt-3 md:pt-9">
       <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
-        What I do?
+        Especialidades
       </h3>
       <ul className="space-y-4 mt-4 text-lg">
         {Object.entries(skills).map(([category, items]) => (
